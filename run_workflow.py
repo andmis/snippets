@@ -11,7 +11,7 @@ async def main():
     use_wait = "-w" in sys.argv
     result = await client.execute_workflow(
         SandboxWorkflow.run,
-        (use_sleep, use_wait),
+        args=(use_sleep, use_wait),
         id="sandbox-workflow",
         task_queue="sandbox-queue",
     )
