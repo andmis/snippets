@@ -9,7 +9,7 @@ from temporalio import activity
 async def sandbox_activity(use_sleep: bool) -> None:
     try:
         print(f"{dt.datetime.now()} (Activity) Running sandbox_activity")
-        await asyncio.sleep(random.uniform(1, 10))
+        await asyncio.sleep(random.uniform(5, 10))
         activity.heartbeat()
         if use_sleep:
             await asyncio.sleep(0.1)

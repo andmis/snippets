@@ -17,6 +17,7 @@ class SandboxWorkflow:
             sandbox_activity,
             use_sleep,
             start_to_close_timeout=dt.timedelta(seconds=100),
+            cancellation_type=workflow.ActivityCancellationType.WAIT_CANCELLATION_COMPLETED,
         )
         await asyncio.sleep(1)  # Give the activity a chance to start.
         print(f"{workflow.now()} (Workflow) Cancelling activity")
