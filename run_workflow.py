@@ -7,10 +7,10 @@ from workflows import SandboxWorkflow
 
 async def main():
     client = await get_client()
-    local = sys.argv[-1] == "-l"
+    use_sleep = sys.argv[-1] == "-s"
     result = await client.execute_workflow(
         SandboxWorkflow.run,
-        local,
+        use_sleep,
         id="sandbox-workflow",
         task_queue="sandbox-queue",
     )
